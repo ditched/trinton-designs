@@ -1,0 +1,8 @@
+"big query":
+  responses:
+    - "idk"
+    - "more stuff"
+    - "extra stuff"
+    - "too much stuff"
+"$im an ambiguous query":
+  extend: "big query"

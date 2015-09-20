@@ -1,0 +1,335 @@
+@import 'fonts'
+@import 'mixins'
+
+$accent = #519dc4
+
+body, html
+  margin 0
+  padding 0
+body
+  background-color black
+.overlay
+  position fixed
+  top 0
+  left 0
+  width 100%
+  height 100%
+  background-color rgba(#000, 0.6)
+.loader
+  position fixed
+  top 0
+  left 0
+  z-index 999
+  width 100%
+  height 100%
+  background-color #519DC4
+  .loading-bar
+    position absolute
+    top 45%
+    left 0
+    right 0
+    text-align center
+    transform translateY(@top * -1)
+    h1
+      color #fff
+      font-family $gotham-light
+      text-transform uppercase
+      font-size 35pt
+      span
+        font-family $gotham-bold
+    span
+      &.progress-fade
+        width 300px
+        margin auto
+        background-color #A8CEE2
+        height 10px
+        display block
+      &.progress
+        display block
+        height 10px
+        width 0px
+        background-color #fff
+.header
+  padding 25px
+  position relative
+  z-index 666
+  .brand
+    font-family $gotham-book
+    font-size 20pt
+    color lighten(#484848, 30%)
+  .navigation
+    list-style none
+    margin 0
+    width 100px
+    li
+      text-align center
+      background-color lighten(#484848, 30%)
+      margin-bottom 3px
+      height 15px
+      line-height @height
+      width 80px
+      &.active
+        background-color $accent
+        position relative
+        right 10px
+        width 90px
+        height 25px
+        line-height @height
+        a
+          opacity 1
+      a
+        opacity 0
+        font-size 10pt
+        display block
+        color #fff
+        font-family $gotham-bold
+        text-transform uppercase
+        text-decoration none
+.statement
+  position absolute
+  top 50%
+  left 0
+  right 0
+  transform translateY(@top * -1)
+  text-align center
+  color #fff
+  font-family $gotham-light
+  h1
+    margin 0
+    letter-spacing 2px
+    font-size 30pt
+    b
+      font-family $gotham-bold
+  .btn
+    position relative
+    top 50px
+    color $accent
+    text-decoration none
+    font-size 15pt
+    border 2px solid $accent
+    padding 12px 24px
+    border-radius 50px
+    font-family $gotham-book
+    width 150px
+    margin auto
+    display block
+    &:hover
+      background-color $accent
+      color #fff
+.about
+  color #fff 
+  position absolute
+  top 50%
+  left 10%
+  transform translateY(@top * -1)
+  h1
+    font-family $gotham-bold
+    font-size 25pt
+  p
+    font-family $gotham-book
+    line-height 25px
+    width 600px
+.display
+  margin-top 8%
+  width 100%
+  .display-header
+    height 65px
+    line-height @height
+    margin-bottom 55px
+    h1
+      margin 0
+      font-family $gotham-bold
+      color #fff
+      margin-left 150px
+      position absolute
+      .display-header-bar
+        display block
+        height 10px
+        background-color $accent
+        width 100px
+  .order
+    margin-right 150px
+    font-size 0pt
+    a
+      color #fff
+      text-decoration none
+      font-size 15pt
+      margin 0px 8px
+      &.active
+        color $accent
+  .display-body
+    .study
+      position absolute
+      top -400px
+      left 0
+      height 100%
+      width 600px
+      background-color rgba($accent, 90%)
+      box-sizing border-box
+      padding 25px
+      color #fff
+      h1
+        font-family $gotham-bold
+        color #343B3F
+      p
+        font-family $gotham-book
+        line-height 20px
+      ul
+        list-style none
+        margin 0
+        padding 0
+        font-family $gotham-book
+        li
+          height 35px
+          line-height @height
+          span
+            color lighten($accent, 60%)
+      a
+        position absolute
+        bottom 25px
+        text-decoration none
+        color #fff
+        font-family $gotham-light
+        border 2px solid #fff
+        border-radius 50px
+        padding 12px 15px
+        transition(all 200ms)
+        &:hover
+          background-color #fff
+          color $accent
+    &[data-display="tile"]
+      width 100%
+      .case-study
+        width (100 / 3)%
+        height 400px
+        overflow hidden
+        display inline-block
+        position relative
+        .study
+          width 100%
+    &[data-display="list"]
+      .case-study
+        width 100%
+        height 400px
+        margin auto
+        position relative
+        overflow hidden
+        .image-wrapper
+          .image-preview
+            width 100%
+.contact
+  margin 0 auto
+  margin-top 6%
+  width 80% !important
+  .spacer
+    height 35px
+  h1
+    margin 0
+    color #fff
+    text-transform uppercase
+    color #fff
+    font-family $gotham-bold
+    font-size 20pt
+  form
+    input, textarea
+      font-family $gotham-book
+      background-color #333333
+      border none
+      color #fff
+      &::-webkit-input-placeholder
+        color #acacac
+      &:-moz-placeholder
+        color #acacac
+      &::-moz-placeholder
+        color #acacac
+      &:-ms-input-placeholder
+        color #acacac
+    input[type="text"]
+      height 35px
+      box-sizing border-box
+      padding-left 8px
+      width 200px
+      margin-bottom 15px
+      margin-right 15px
+    textarea
+      width 415px
+      margin-bottom 15px
+      resize none
+      box-sizing border-box
+      padding 8px
+      overflow auto
+    input[type="submit"]
+      display block
+      font-family $gotham-bold
+      color #fff
+      height 35px
+      width 80px
+      background-color $accent
+      cursor pointer
+.footer
+  position absolute
+  bottom 15px
+  left 0
+  right 0
+  z-index 666
+  text-align center
+  font-size 0pt
+  a
+    color #fff
+    font-size 15pt
+    margin 0px 15px
+    &:hover
+      color darken(#fff, 20%)
+.container
+  width 990px
+  
+//Responsive
+@media only screen and (max-width : 480px)
+  .loader
+    display none
+  .statement
+    position absolute
+    top 50%
+    left 0
+    right 0
+    transform translateY(@top * -1)
+    text-align center
+    color #fff
+    font-family $gotham-light
+    h1
+      margin 0
+      letter-spacing 2px
+      font-size 15pt
+      b
+        font-family $gotham-bold
+    .btn
+      position relative
+      top 50px
+      color $accent
+      text-decoration none
+      font-size 15pt
+      border 2px solid $accent
+      padding 12px 24px
+      border-radius 50px
+      font-family $gotham-book
+      width 150px
+      margin auto
+      display block
+      &:hover
+        background-color $accent
+        color #fff
+  .about
+    color #fff 
+    position absolute
+    top 50%
+    left 0%
+    transform translateY(@top * -1)
+    h1
+      font-family $gotham-bold
+      font-size 19pt
+    p
+      font-family $gotham-book
+      line-height 25px
+      font-size 10pt
+      margin auto
+      text-align center

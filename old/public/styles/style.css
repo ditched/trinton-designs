@@ -1,0 +1,464 @@
+@font-face {
+  font-family: 'GothamBookRegular';
+  src: url("../fonts/Gotham/gotham-book-webfont.eot");
+  src: url("../fonts/Gotham/gotham-book-webfont.eot?#iefix") format('embedded-opentype'), url("../fonts/Gotham/gotham-book-webfont.woff") format('woff'), url("../fonts/Gotham/gotham-book-webfont.ttf") format('truetype'), url("../fonts/Gotham/gotham-book-webfont.svg#GothamBookRegular") format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'GothamBoldRegular';
+  src: url("../fonts/Gotham/gotham-bold-webfont.eot");
+  src: url("../fonts/Gotham/gotham-bold-webfont.eot?#iefix") format('embedded-opentype'), url("../fonts/Gotham/gotham-bold-webfont.woff") format('woff'), url("../fonts/Gotham/gotham-bold-webfont.ttf") format('truetype'), url("../fonts/Gotham/gotham-bold-webfont.svg#GothamBoldRegular") format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'GothamMediumRegular';
+  src: url("../fonts/Gotham/gotham-medium-webfont.eot");
+  src: url("../fonts/Gotham/gotham-medium-webfont.eot?#iefix") format('embedded-opentype'), url("../fonts/Gotham/gotham-medium-webfont.woff") format('woff'), url("../fonts/Gotham/gotham-medium-webfont.ttf") format('truetype'), url("../fonts/Gotham/gotham-medium-webfont.svg#GothamMediumRegular") format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'GothamLightRegular';
+  src: url("../fonts/Gotham/gotham-light-webfont.eot");
+  src: url("../fonts/Gotham/gotham-light-webfont.eot?#iefix") format('embedded-opentype'), url("../fonts/Gotham/gotham-light-webfont.woff") format('woff'), url("../fonts/Gotham/gotham-light-webfont.ttf") format('truetype'), url("../fonts/Gotham/gotham-light-webfont.svg#GothamLightRegular") format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'BeaufortBold';
+  src: url("../fonts/Beaufort/BeaufortforLOL-Bold.eot");
+  src: url("../fonts/Beaufort/BeaufortforLOL-Bold.eot?#iefix") format('embedded-opentype'), url("../fonts/Beaufort/BeaufortforLOL-Bold.woff") format('woff'), url("../fonts/Beaufort/BeaufortforLOL-Bold.ttf") format('truetype'), url("../fonts/Beaufort/BeaufortforLOL-Bold.svg#BeaufortBold") format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'BeaufortRegular';
+  src: url("../fonts/Beaufort/BeaufortforLOL-Regular.eot");
+  src: url("../fonts/Beaufort/BeaufortforLOL-Regular?#iefix") format('embedded-opentype'), url("../fonts/Beaufort/BeaufortforLOL-Regular.woff") format('woff'), url("../fonts/Beaufort/BeaufortforLOL-Regular.ttf") format('truetype'), url("../fonts/Beaufort/BeaufortforLOL-Regular.svg#BeaufortRegular") format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+body,
+html {
+  margin: 0;
+  padding: 0;
+}
+body {
+  background-color: #000;
+}
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,0.6);
+}
+.loader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 999;
+  width: 100%;
+  height: 100%;
+  background-color: #519dc4;
+}
+.loader .loading-bar {
+  position: absolute;
+  top: 45%;
+  left: 0;
+  right: 0;
+  text-align: center;
+  -webkit-transform: translateY(-45%);
+  -moz-transform: translateY(-45%);
+  -ms-transform: translateY(-45%);
+  -o-transform: translateY(-45%);
+  transform: translateY(-45%);
+}
+.loader .loading-bar h1 {
+  color: #fff;
+  font-family: 'GothamLightRegular', sans-serif;
+  text-transform: uppercase;
+  font-size: 35pt;
+}
+.loader .loading-bar h1 span {
+  font-family: 'GothamBoldRegular', sans-serif;
+}
+.loader .loading-bar span.progress-fade {
+  width: 300px;
+  margin: auto;
+  background-color: #a8cee2;
+  height: 10px;
+  display: block;
+}
+.loader .loading-bar span.progress {
+  display: block;
+  height: 10px;
+  width: 0px;
+  background-color: #fff;
+}
+.header {
+  padding: 25px;
+  position: relative;
+  z-index: 666;
+}
+.header .brand {
+  font-family: 'GothamBookRegular', sans-serif;
+  font-size: 20pt;
+  color: #7f7f7f;
+}
+.header .navigation {
+  list-style: none;
+  margin: 0;
+  width: 100px;
+}
+.header .navigation li {
+  text-align: center;
+  background-color: #7f7f7f;
+  margin-bottom: 3px;
+  height: 15px;
+  line-height: 15px;
+  width: 80px;
+}
+.header .navigation li.active {
+  background-color: #519dc4;
+  position: relative;
+  right: 10px;
+  width: 90px;
+  height: 25px;
+  line-height: 25px;
+}
+.header .navigation li.active a {
+  opacity: 1;
+}
+.header .navigation li a {
+  opacity: 0;
+  font-size: 10pt;
+  display: block;
+  color: #fff;
+  font-family: 'GothamBoldRegular', sans-serif;
+  text-transform: uppercase;
+  text-decoration: none;
+}
+.statement {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  right: 0;
+  -webkit-transform: translateY(-50%);
+  -moz-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  -o-transform: translateY(-50%);
+  transform: translateY(-50%);
+  text-align: center;
+  color: #fff;
+  font-family: 'GothamLightRegular', sans-serif;
+}
+.statement h1 {
+  margin: 0;
+  letter-spacing: 2px;
+  font-size: 30pt;
+}
+.statement h1 b {
+  font-family: 'GothamBoldRegular', sans-serif;
+}
+.statement .btn {
+  position: relative;
+  top: 50px;
+  color: #519dc4;
+  text-decoration: none;
+  font-size: 15pt;
+  border: 2px solid #519dc4;
+  padding: 12px 24px;
+  border-radius: 50px;
+  font-family: 'GothamBookRegular', sans-serif;
+  width: 150px;
+  margin: auto;
+  display: block;
+}
+.statement .btn:hover {
+  background-color: #519dc4;
+  color: #fff;
+}
+.about {
+  color: #fff;
+  position: absolute;
+  top: 50%;
+  left: 10%;
+  -webkit-transform: translateY(-50%);
+  -moz-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  -o-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+.about h1 {
+  font-family: 'GothamBoldRegular', sans-serif;
+  font-size: 25pt;
+}
+.about p {
+  font-family: 'GothamBookRegular', sans-serif;
+  line-height: 25px;
+  width: 600px;
+}
+.display {
+  margin-top: 8%;
+  width: 100%;
+}
+.display .display-header {
+  height: 65px;
+  line-height: 65px;
+  margin-bottom: 55px;
+}
+.display .display-header h1 {
+  margin: 0;
+  font-family: 'GothamBoldRegular', sans-serif;
+  color: #fff;
+  margin-left: 150px;
+  position: absolute;
+}
+.display .display-header h1 .display-header-bar {
+  display: block;
+  height: 10px;
+  background-color: #519dc4;
+  width: 100px;
+}
+.display .order {
+  margin-right: 150px;
+  font-size: 0pt;
+}
+.display .order a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 15pt;
+  margin: 0px 8px;
+}
+.display .order a.active {
+  color: #519dc4;
+}
+.display .display-body .study {
+  position: absolute;
+  top: -400px;
+  left: 0;
+  height: 100%;
+  width: 600px;
+  background-color: rgba(81,157,196,0.9);
+  box-sizing: border-box;
+  padding: 25px;
+  color: #fff;
+}
+.display .display-body .study h1 {
+  font-family: 'GothamBoldRegular', sans-serif;
+  color: #343b3f;
+}
+.display .display-body .study p {
+  font-family: 'GothamBookRegular', sans-serif;
+  line-height: 20px;
+}
+.display .display-body .study ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  font-family: 'GothamBookRegular', sans-serif;
+}
+.display .display-body .study ul li {
+  height: 35px;
+  line-height: 35px;
+}
+.display .display-body .study ul li span {
+  color: #b9d8e7;
+}
+.display .display-body .study a {
+  position: absolute;
+  bottom: 25px;
+  text-decoration: none;
+  color: #fff;
+  font-family: 'GothamLightRegular', sans-serif;
+  border: 2px solid #fff;
+  border-radius: 50px;
+  padding: 12px 15px;
+  -webkit-transition: all 200ms;
+  -moz-transition: all 200ms;
+  -ms-transition: all 200ms;
+  -o-transition: all 200ms;
+  transition: all 200ms;
+}
+.display .display-body .study a:hover {
+  background-color: #fff;
+  color: #519dc4;
+}
+.display .display-body[data-display="tile"] {
+  width: 100%;
+}
+.display .display-body[data-display="tile"] .case-study {
+  width: 33.333333333333336%;
+  height: 400px;
+  overflow: hidden;
+  display: inline-block;
+  position: relative;
+}
+.display .display-body[data-display="tile"] .case-study .study {
+  width: 100%;
+}
+.display .display-body[data-display="list"] .case-study {
+  width: 100%;
+  height: 400px;
+  margin: auto;
+  position: relative;
+  overflow: hidden;
+}
+.display .display-body[data-display="list"] .case-study .image-wrapper .image-preview {
+  width: 100%;
+}
+.contact {
+  margin: 0 auto;
+  margin-top: 6%;
+  width: 80% !important;
+}
+.contact .spacer {
+  height: 35px;
+}
+.contact h1 {
+  margin: 0;
+  color: #fff;
+  text-transform: uppercase;
+  color: #fff;
+  font-family: 'GothamBoldRegular', sans-serif;
+  font-size: 20pt;
+}
+.contact form input,
+.contact form textarea {
+  font-family: 'GothamBookRegular', sans-serif;
+  background-color: #333;
+  border: none;
+  color: #fff;
+}
+.contact form input::-webkit-input-placeholder,
+.contact form textarea::-webkit-input-placeholder {
+  color: #acacac;
+}
+.contact form input:-moz-placeholder,
+.contact form textarea:-moz-placeholder {
+  color: #acacac;
+}
+.contact form input::-moz-placeholder,
+.contact form textarea::-moz-placeholder {
+  color: #acacac;
+}
+.contact form input:-ms-input-placeholder,
+.contact form textarea:-ms-input-placeholder {
+  color: #acacac;
+}
+.contact form input[type="text"] {
+  height: 35px;
+  box-sizing: border-box;
+  padding-left: 8px;
+  width: 200px;
+  margin-bottom: 15px;
+  margin-right: 15px;
+}
+.contact form textarea {
+  width: 415px;
+  margin-bottom: 15px;
+  resize: none;
+  box-sizing: border-box;
+  padding: 8px;
+  overflow: auto;
+}
+.contact form input[type="submit"] {
+  display: block;
+  font-family: 'GothamBoldRegular', sans-serif;
+  color: #fff;
+  height: 35px;
+  width: 80px;
+  background-color: #519dc4;
+  cursor: pointer;
+}
+.footer {
+  position: absolute;
+  bottom: 15px;
+  left: 0;
+  right: 0;
+  z-index: 666;
+  text-align: center;
+  font-size: 0pt;
+}
+.footer a {
+  color: #fff;
+  font-size: 15pt;
+  margin: 0px 15px;
+}
+.footer a:hover {
+  color: #ccc;
+}
+.container {
+  width: 990px;
+}
+@media only screen and (max-width: 480px) {
+  .loader {
+    display: none;
+  }
+  .statement {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    right: 0;
+    -webkit-transform: translateY(-50%);
+    -moz-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    -o-transform: translateY(-50%);
+    transform: translateY(-50%);
+    text-align: center;
+    color: #fff;
+    font-family: 'GothamLightRegular', sans-serif;
+  }
+  .statement h1 {
+    margin: 0;
+    letter-spacing: 2px;
+    font-size: 15pt;
+  }
+  .statement h1 b {
+    font-family: 'GothamBoldRegular', sans-serif;
+  }
+  .statement .btn {
+    position: relative;
+    top: 50px;
+    color: #519dc4;
+    text-decoration: none;
+    font-size: 15pt;
+    border: 2px solid #519dc4;
+    padding: 12px 24px;
+    border-radius: 50px;
+    font-family: 'GothamBookRegular', sans-serif;
+    width: 150px;
+    margin: auto;
+    display: block;
+  }
+  .statement .btn:hover {
+    background-color: #519dc4;
+    color: #fff;
+  }
+  .about {
+    color: #fff;
+    position: absolute;
+    top: 50%;
+    left: 0%;
+    -webkit-transform: translateY(-50%);
+    -moz-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    -o-transform: translateY(-50%);
+    transform: translateY(-50%);
+  }
+  .about h1 {
+    font-family: 'GothamBoldRegular', sans-serif;
+    font-size: 19pt;
+  }
+  .about p {
+    font-family: 'GothamBookRegular', sans-serif;
+    line-height: 25px;
+    font-size: 10pt;
+    margin: auto;
+    text-align: center;
+  }
+}
